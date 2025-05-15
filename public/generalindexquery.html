@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Search Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        {{if .Error}}
+            <h1>Error</h1>
+            <p class="error">{{.Error}}</p>
+            <a href="/general" class="back-link">Back to Search</a>
+        {{else}}
+            {{if .Search}}
+                <h1>Search Result</h1>
+                <div class="book">
+                    <p><strong>Title:</strong> {{.Search.Title}}</p>
+                    <p><strong>Authors:</strong> {{range .Search.AuthorName}}{{.}}, {{end}}</p>
+                    <p><strong>Author Keys:</strong> {{range .Search.AuthorKey}}{{.}}, {{end}}</p>
+                    {{if .Search.CoverEditionKey}}
+                        <p><strong>Cover Edition Key:</strong> {{.Search.CoverEditionKey}}</p>
+                    {{end}}
+                    <p><strong>EBook Access:</strong> {{.Search.EBookAccess}}</p>
+                    <p><strong>Edition Count:</strong> {{.Search.EditionCount}}</p>
+                    <p><strong>First Published:</strong> {{.Search.FirstPublishYear}}</p>
+                    <p><strong>Has Full Text:</strong> {{.Search.HasFullText}}</p>
+                    <p><strong>Languages:</strong> {{range .Search.Language}}{{.}}, {{end}}</p>
+                </div>
+                <a href="/general" class="back-link">Back to Search</a>
+            {{else}}
+                <h1>No Data</h1>
+                <p class="error">No book or author data available for this query.</p>
+                <a href="/general" class="back-link">Back to Search</a>
+            {{end}}
+        {{end}}
+    </div>
+</body>
+</html>

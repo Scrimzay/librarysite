@@ -1,0 +1,273 @@
+/* Base Styles */
+body {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Overlay for better readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 5, 20, 0.85);
+    z-index: -1;
+}
+
+h1 {
+    color: #d4af37;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #000;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* Specialized Search Headers */
+h1:not(:first-child) {
+    position: relative;
+    padding-left: 30px;
+}
+
+h1:not(:first-child)::before {
+    content: "✧";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 46, 0.9);
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Button Styles */
+button, a button {
+    background-color: #2a1a3a;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover, a button:hover {
+    background-color: #d4af37;
+    color: #1a1a2e;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    background-color: rgba(42, 26, 58, 0.8);
+    border: 1px solid #d4af37;
+    color: #e6e6e6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* Form Input Placeholder Styling */
+input::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* Book Search Specific Styles */
+.book-search-form input[type="text"] {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+/* Author Search Specific Styles */
+.author-search-form input[type="text"] {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+/* Book Info Styles */
+.book {
+    background-color: rgba(42, 26, 58, 0.8);
+    padding: 20px;
+    border-left: 4px solid #d4af37;
+    margin: 20px 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.book::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #8b6914, #d4af37);
+    opacity: 0.7;
+}
+
+.book p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.book strong {
+    color: #d4af37;
+}
+
+/* Link Styles */
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: rgba(42, 26, 58, 0.8);
+    border-radius: 4px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.back-link::before {
+    content: "←";
+    position: absolute;
+    left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover::before {
+    transform: translateX(-3px);
+}
+
+/* Error Styles */
+.error {
+    color: #ff6b6b;
+    background-color: rgba(90, 24, 24, 0.5);
+    padding: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+/* No Data State */
+.no-data {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(42, 26, 58, 0.5);
+    border: 1px dashed #d4af37;
+}
+
+.no-data h1 {
+    color: #a0a0a0;
+    border-bottom: none;
+}
+
+/* Home Page Specific */
+body > h1:first-child {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37;
+    }
+    to {
+        text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    button, a button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    input[type="text"] {
+        font-size: 0.9rem;
+    }
+    
+    .book p {
+        font-size: 0.9rem;
+    }
+}
